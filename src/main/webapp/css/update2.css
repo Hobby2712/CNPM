@@ -404,23 +404,27 @@ a.list-group-item {
 }
 
 footer {
-    margin-top: 30px;
+    position: absolute;
+    width: 100%;
+    bottom: -280px;
     height: 50px;
     background-color: #577ca5;
     color: var(--secondary-color);
     display: flex;
     align-items: center;
+    padding-left: 20px;
 }
 
 footer a {
-    position: fixed;
+    position: absolute;
     width: 40px;
     line-height: 50px;
     background-color: rgb(3, 74, 130);
     color: var(--secondary-color) !important;
-    font-size: 20px;
+    font-size: 40px;
+    font-weight: 400;
     right: 42px;
-    bottom: 20px;
+    
     text-align: center;
     border-radius: 50%;
 
@@ -488,24 +492,7 @@ footer a {
     height: 36.8px;
 
 
-    background: #1AECFA;
-}
-
-.label1 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
+    background: #E5E4E4;
 }
 
 .label2 {
@@ -518,23 +505,6 @@ footer a {
     background: #CBCACA;
 }
 
-.label2 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
-
 .label3 {
 
     width: 375px;
@@ -543,23 +513,6 @@ footer a {
     top: 73.6px;
 
     background: #E5E4E4;
-}
-
-.label3 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
 }
 
 .label4 {
@@ -572,23 +525,6 @@ footer a {
     background: #CBCACA;
 }
 
-.label4 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
-
 .label5 {
 
     width: 375px;
@@ -597,23 +533,6 @@ footer a {
     top: 147.2px;
 
     background: #E5E4E4;
-}
-
-.label5 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
 }
 
 .label6 {
@@ -626,23 +545,6 @@ footer a {
     background: #CBCACA;
 }
 
-.label6 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
-
 .label7 {
     width: 375px;
     height: 36.8px;
@@ -651,23 +553,6 @@ footer a {
 
     background: #E5E4E4;
     top: 220.8px;
-}
-
-.label7 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
 }
 
 .label8 {
@@ -680,23 +565,6 @@ footer a {
     top: 257.6px;
 }
 
-.label8 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
-
 .label9 {
     width: 375px;
     height: 36.8px;
@@ -706,22 +574,6 @@ footer a {
     background: #E5E4E4;
 }
 
-.label9 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
 
 
 .image {
@@ -756,22 +608,40 @@ footer a {
     border: 1px solid #000000;
 }
 
+.frame-info{
+   
+    margin-top: 40px;
+}
+
 
 
 .frame-info .title-info {
     box-sizing: border-box;
 
     position: absolute;
-    width: 418px;
-    height: 30px;
-    left: 60%;
-    bottom: 240px;
+    width: 800px;
+    height: 40px;
+    left: 3%;
+    bottom: -20px;
 
     background: #1AECFA;
     border: 2px solid #000000;
 }
 
+.frame-info .title-info span{
 
+    position: absolute;
+    left: 4%;
+    top: 8px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    
+    line-height: 19px;
+
+    color: #000000;
+}
 
 
 
@@ -782,8 +652,8 @@ footer a {
     width: 335px;
     height: 27px;
 
-    bottom: 200px;
-    left: 65.4%;
+    bottom: -60px;
+    left: 39.5%;
 
     background: #FBF9F9;
     border: 2px solid #000000;
@@ -794,8 +664,8 @@ footer a {
 
     position: absolute;
 
-    left: 60%;
-    bottom: 195px;
+    left: 32%;
+    bottom: -65px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -815,8 +685,8 @@ footer a {
     width: 335px;
     height: 27px;
 
-    left: 65.4%;
-    bottom: 160px;
+    left: 39.5%;
+    bottom: -100px;
 
     background: #FBF9F9;
     border: 2px solid #000000;
@@ -826,8 +696,8 @@ footer a {
 
 
     position: absolute;
-    bottom: 155px;
-    left: 60%;
+    bottom: -105px;
+    left: 32%;
 
 
     font-family: 'Inter';
@@ -848,8 +718,8 @@ footer a {
     width: 335px;
     height: 27px;
 
-    left: 65.4%;
-    bottom: 120px;
+    left: 39.5%;
+    bottom: -140px;
 
     background: #FBF9F9;
     border: 2px solid #000000;
@@ -859,8 +729,8 @@ footer a {
 
 
     position: absolute;
-    bottom: 115px;
-    left: 60%;
+    bottom: -145px;
+    left: 32%;
 
 
     font-family: 'Inter';
@@ -878,8 +748,8 @@ footer a {
     border-radius: 5px;
     width: 87px;
     height: 37px;
-    bottom: 65px;
-    right: 13%;
+    bottom: -190px;
+    left: 55%;
     background: rgba(53, 201, 255, 0.42);
     border: 2px solid #000000;
 }
@@ -908,8 +778,7 @@ footer a {
     width: 78px;
     height: 19px;
     left: 41%;
-    bottom: 7px;
-    ;
+    bottom: 7px;;
 
     font-family: 'Inter';
     font-style: normal;

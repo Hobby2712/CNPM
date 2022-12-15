@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO.DeTaiDAO;
-import DAOImpl.DeTaiDAOImpl;
-import Entity.DeTai;
+import DAO.TaiKhoanDAO;
+import DAOImpl.TaiKhoanDAOImpl;
+import Entity.TaiKhoan;
 
-@WebServlet(urlPatterns = { "/listDT" })
-public class ListDeTaiController extends HttpServlet {
+@WebServlet(urlPatterns = { "/listTK" })
+public class ListTaiKhoanController extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -27,11 +27,11 @@ public class ListDeTaiController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
 		
-		DeTaiDAO dao = new DeTaiDAOImpl();
-		List<DeTai> list = dao.getAllDeTai();
-		req.setAttribute("list", list);
+		TaiKhoanDAO dao = new TaiKhoanDAOImpl();
+		List<TaiKhoan> list = dao.getAllTaiKhoan();
+		req.setAttribute("listTK", list);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/list_detai.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/accout.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
@@ -41,12 +41,13 @@ public class ListDeTaiController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
 		
-		DeTaiDAO dao = new DeTaiDAOImpl();
-		List<DeTai> list = dao.getAllDeTai();
-		req.setAttribute("list", list);
+		TaiKhoanDAO dao = new TaiKhoanDAOImpl();
+		List<TaiKhoan> list = dao.getAllTaiKhoan();
+		req.setAttribute("listTK", list);
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/list_detai.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/accout.jsp");
 		dispatcher.forward(req, resp);
 	}
 
+	
 }

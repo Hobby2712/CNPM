@@ -21,7 +21,7 @@
                 <li><a href="student.html"><span class="las la-users"></span><span>Sinh viên</span></a></li>
                 <li><a href="teacher.html"><span class="las la-users"></span><span>Giảng viên</span></a></li>
                 <li><a href="detai.jsp"><span class="las la-list"></span><span>Tạo đợt đăng ký đề tài</span></a></li>
-                <li><a href="Account.html"><span class="las la-user-circle"></span><span>Tài khoản</span></a></li>
+                <li><a href="listTK"><span class="las la-user-circle"></span><span>Tài khoản</span></a></li>
             </ul>
         </div>
     </div>

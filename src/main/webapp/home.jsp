@@ -39,7 +39,7 @@
         <a href="listDT" class="list-group-item ">Danh sách đề tài</a>
         <a href="#" class="list-group-item ">Thông tin
             giảng viên</a>
-        <a href="#" class="list-group-item ">Thông tin
+        <a href="info" class="list-group-item ">Thông tin
             sinh viên</a>
         <a href="#" class="list-group-item ">Thống kê</a>
         <a data-toggle="modal" href="#seach_box" class="list-group-item">
@@ -85,7 +85,7 @@
                                     <a href="listDT" class="list-group-item active "> Danh sách đề tài</a>
                                     <a href="#" class="list-group-item active ">Thông tin giảng
                                         viên</a>
-                                    <a href="#" class="list-group-item active "> Thông tin sinh
+                                    <a href="info" class="list-group-item active "> Thông tin sinh
                                         viên</a>
                                     <a data-toggle="modal" href="#" class="list-group-item active"> Tìm
                                         kiếm</a>
