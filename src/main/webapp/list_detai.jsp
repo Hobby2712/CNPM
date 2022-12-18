@@ -37,12 +37,11 @@
 	<div id="menu">
 		<li class="list-group-item"
 			style="text-align: center; font-weight: bold; font-family: verdana; background-color: #efefef; color: cadetblue;">
-			DANH MỤC</li> <a href="home" class="list-group-item">Trang Chủ</a> <a
-			href="listDT" class="list-group-item ">Danh sách đề tài</a> <a
-			href="#" class="list-group-item ">Thông tin giảng viên</a> <a
-			href="#" class="list-group-item ">Thông tin sinh viên</a> <a href="#"
-			class="list-group-item ">Thống kê</a> <a data-toggle="modal"
-			href="#seach_box" class="list-group-item"> Tìm kiếm</a>
+			DANH MỤC</li> <a href="home" class="list-group-item ">Trang Chủ</a> <a
+			href="info" class="list-group-item ">Quản trị tài khoản</a> <a
+			href="listDT" class="list-group-item active">Đăng kí đề tài</a><a
+			href="loadTV" class="list-group-item ">Quản lý nhóm</a> <a
+			href="nopBC" class="list-group-item ">Nộp báo cáo</a>
 		<hr />
 	</div>
 
@@ -61,9 +60,16 @@
 			<div id="banner-desktop">
 				<div class="container">
 					<div id="banner">
-						<div id="login-area">
-							<a data-toggle="modal" href="Login.html"> Đăng nhập</a>
-						</div>
+						<c:if test="${sessionScope.acc.role == null}">
+							<div id="login-area">
+								<a data-toggle="modal" href="loginAccount"> Đăng nhập</a>
+							</div>
+						</c:if>
+						<c:if test="${sessionScope.acc.role != null}">
+							<div id="login-area">
+								<a data-toggle="modal" href="logout"> Đăng xuất</a>
+							</div>
+						</c:if>
 					</div>
 				</div>
 			</div>
@@ -81,12 +87,11 @@
 										<h4 id="mobile_home">Danh Mục</h4>
 									</div>
 
-									<a href="home" class="list-group-item active">Trang Chủ</a> <a
-										href="listDT" class="list-group-item active "> Danh sách
-										đề tài</a> <a href="#" class="list-group-item active ">Thông
-										tin giảng viên</a> <a href="#" class="list-group-item active ">
-										Thông tin sinh viên</a> <a data-toggle="modal" href="#"
-										class="list-group-item active"> Tìm kiếm</a>
+									<a href="home" class="list-group-item ">Trang Chủ</a> <a
+										href="info" class="list-group-item ">Quản trị tài khoản</a> <a
+										href="listDT" class="list-group-item active">Đăng kí đề
+										tài</a><a href="loadTV" class="list-group-item ">Quản lý nhóm</a>
+									<a href="nopBC" class="list-group-item ">Nộp báo cáo</a>
 								</div>
 							</div>
 						</div>
@@ -95,12 +100,12 @@
 					<div class="col-md-9">
 						<ol class="breadcrumb">
 							<li><a href="#"> <marquee width="100%" behavior="scroll"
-										direction="left">
-									<img height="15px" width="15px" src="img/thongbao.png"
-										alt="thong bao"> Thông báo khóa k2020 nộp bằng tốt
-										nghiệp trước ngày 21-12-2022 | Sinh viên nghỉ tết dương lịch
-										2023 2 ngày 01-01-2022 và 02-01-2022 | Sinh viên sẽ kết thúc
-										học kì 1 năm học 2022 trước ngày 09-01-2022 </marquee>
+										direction="left"> <img height="15px" width="15px"
+										src="img/thongbao.png" alt="thong bao"> Thông báo khóa
+										k2020 nộp bằng tốt nghiệp trước ngày 21-12-2022 | Sinh viên
+										nghỉ tết dương lịch 2023 2 ngày 01-01-2022 và 02-01-2022 |
+										Sinh viên sẽ kết thúc học kì 1 năm học 2022 trước ngày
+										09-01-2022 </marquee>
 							</a></li>
 
 						</ol>
@@ -120,23 +125,24 @@
 							</thead>
 							<tbody>
 								<c:forEach items="${list}" var="o">
+									<c:if test="${o.checkSL(o.id)<o.soLuong}">
 
-									<tr class="">
-										<td class="footable-first-column"><span
-											class="footable-toggle"></span><span class="text-info">${o.id}</span></td>
-										<td>${o.tenDT}</td>
-										<td>${o.GVHD}</td>
-										<td class="footable-last-column"><a target="_blank"
-											href="detail?id=${o.id}" class="btn btn-success btn-xs">Xem</a>
-										</td>
+										<tr class="">
+											<td class="footable-first-column"><span
+												class="footable-toggle"></span><span class="text-info">${o.id}</span></td>
+											<td>${o.tenDT}</td>
+											<td>${o.GVHD}</td>
+											<td class="footable-last-column"><a
+												href="detail?id=${o.id}" class="btn btn-success btn-xs">Xem</a>
+											</td>
 
-									</tr>
+										</tr>
+									</c:if>
 								</c:forEach>
 							</tbody>
 							<tfoot>
 								<tr>
 									<td colspan="6">
-
 										<!-- <div class="pagination-container">
 											<ul class="pagination">
 												<li class="active"><a>1</a></li>

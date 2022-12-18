@@ -34,12 +34,12 @@ public class DangKiDTSVController extends HttpServlet {
 		int detai = Integer.parseInt(req.getParameter("dt"));
 
 		if (dao.checkDotDKSV() == true) {
-			dao.insertNhom(detai, u.getUid());
+			dao.insertSVQT(detai, u.getUid());
 			req.setAttribute("message", "Đã đăng kí thành công");
 		} else {
 			req.setAttribute("message", "Chưa tới đợt đăng ký");
 		}
-		RequestDispatcher dispatcher = req.getRequestDispatcher("detail");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("detail?id="+detai);
 		dispatcher.forward(req, resp);
 	}
 
@@ -53,7 +53,7 @@ public class DangKiDTSVController extends HttpServlet {
 		int detai = Integer.parseInt(req.getParameter("dt"));
 
 		if (dao.checkDotDKSV() == true) {
-			dao.insertNhom(detai, u.getUid());
+			dao.insertSVQT(detai, u.getUid());
 			req.setAttribute("message", "Đã đăng kí thành công");
 		} else {
 			req.setAttribute("message", "Chưa tới đợt đăng ký");

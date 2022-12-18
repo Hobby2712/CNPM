@@ -410,6 +410,7 @@ footer {
     color: var(--secondary-color);
     display: flex;
     align-items: center;
+    padding-left: 20px;
 }
 
 footer a {
@@ -488,24 +489,7 @@ footer a {
     height: 36.8px;
 
 
-    background: #1AECFA;
-}
-
-.label1 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
+    background: #E5E4E4;
 }
 
 .label2 {
@@ -518,23 +502,6 @@ footer a {
     background: #CBCACA;
 }
 
-.label2 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
-
 .label3 {
 
     width: 375px;
@@ -543,23 +510,6 @@ footer a {
     top: 73.6px;
 
     background: #E5E4E4;
-}
-
-.label3 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
 }
 
 .label4 {
@@ -572,23 +522,6 @@ footer a {
     background: #CBCACA;
 }
 
-.label4 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
-
 .label5 {
 
     width: 375px;
@@ -597,23 +530,6 @@ footer a {
     top: 147.2px;
 
     background: #E5E4E4;
-}
-
-.label5 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
 }
 
 .label6 {
@@ -626,23 +542,6 @@ footer a {
     background: #CBCACA;
 }
 
-.label6 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
-
 .label7 {
     width: 375px;
     height: 36.8px;
@@ -651,23 +550,6 @@ footer a {
 
     background: #E5E4E4;
     top: 220.8px;
-}
-
-.label7 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
 }
 
 .label8 {
@@ -680,23 +562,6 @@ footer a {
     top: 257.6px;
 }
 
-.label8 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
-
 .label9 {
     width: 375px;
     height: 36.8px;
@@ -706,22 +571,6 @@ footer a {
     background: #E5E4E4;
 }
 
-.label9 span {
-    position: absolute;
-    width: 375px;
-    height: 19px;
-    margin-left: 20px;
-    margin-top: 10px;
-    
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #000000;
-}
 
 
 .image {
@@ -908,8 +757,7 @@ footer a {
     width: 78px;
     height: 19px;
     left: 41%;
-    bottom: 7px;
-    ;
+    bottom: 7px;;
 
     font-family: 'Inter';
     font-style: normal;
@@ -930,6 +778,7 @@ footer a {
     .row-inner {
         display: flex;
         flex-wrap: wrap;
+      
     }
 
     .col-left {
@@ -963,5 +812,40 @@ footer a {
 
     .back{
         margin-top: 20px;
-        margin-left: 40px;
+        margin-left: 21px;
     }
+    
+    .container_btn{
+        padding-top: 40px;
+        text-align: left;
+        padding-bottom: 20px;
+   
+    }
+    .container1 {
+        padding-top: 13px;
+    }
+    .col-l{
+        width: 40%;
+        
+    }
+    .col-r{
+        width: 60%;
+    }
+    .xacnhan {
+        margin-right: 20px;
+       
+    }
+.col-left-inner {
+    width: 50%;
+}
+.col-right-inner {
+    width: 50%;
+}
+.password {
+    padding-top: 30px;
+   
+}
+
+.magin {
+    margin-bottom: 260px;
+}

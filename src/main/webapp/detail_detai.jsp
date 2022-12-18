@@ -37,12 +37,11 @@
 	<div id="menu">
 		<li class="list-group-item"
 			style="text-align: center; font-weight: bold; font-family: verdana; background-color: #efefef; color: cadetblue;">
-			DANH MỤC</li> <a href="CNPM.html" class="list-group-item">Trang Chủ</a> <a
-			href="#" class="list-group-item ">Danh sách đề tài</a> <a href="#"
-			class="list-group-item ">Thông tin giảng viên</a> <a href="#"
-			class="list-group-item ">Thông tin sinh viên</a> <a href="#"
-			class="list-group-item ">Thống kê</a> <a data-toggle="modal"
-			href="#seach_box" class="list-group-item"> Tìm kiếm</a>
+			DANH MỤC</li> <a href="home" class="list-group-item ">Trang Chủ</a> <a
+			href="info" class="list-group-item ">Quản trị tài khoản</a> <a
+			href="listDT" class="list-group-item active">Đăng kí đề tài</a><a
+			href="loadTV" class="list-group-item ">Quản lý nhóm</a> <a
+			href="nopBC" class="list-group-item ">Nộp báo cáo</a>
 		<hr />
 	</div>
 
@@ -60,9 +59,16 @@
 			<div id="banner-desktop">
 				<div class="container">
 					<div id="banner">
-						<div id="login-area">
-							<a data-toggle="modal" href="Login.html"> Đăng nhập</a>
-						</div>
+						<c:if test="${sessionScope.acc == null}">
+							<div id="login-area">
+								<a data-toggle="modal" href="loginAccount"> Đăng nhập</a>
+							</div>
+						</c:if>
+						<c:if test="${sessionScope.acc != null}">
+							<div id="login-area">
+								<a data-toggle="modal" href="logout"> Đăng xuất</a>
+							</div>
+						</c:if>
 					</div>
 				</div>
 			</div>
@@ -80,12 +86,11 @@
 										<h4 id="mobile_home">Danh Mục</h4>
 									</div>
 
-									<a href="CNPM.html" class="list-group-item active">Trang
-										Chủ</a> <a href="list_de_tai.html" class="list-group-item active ">
-										Danh sách đề tài</a> <a href="#" class="list-group-item active ">Thông
-										tin giảng viên</a> <a href="#" class="list-group-item active ">
-										Thông tin sinh viên</a> <a data-toggle="modal" href="#"
-										class="list-group-item active"> Tìm kiếm</a>
+									<a href="home" class="list-group-item ">Trang Chủ</a> <a
+										href="info" class="list-group-item ">Quản trị tài khoản</a> <a
+										href="listDT" class="list-group-item active">Danh sách đề
+										tài</a><a href="loadTV" class="list-group-item ">Quản lý nhóm</a>
+									<a href="nopBC" class="list-group-item ">Nộp báo cáo</a>
 								</div>
 							</div>
 						</div>
@@ -94,24 +99,23 @@
 					<div class="col-md-9">
 						<ol class="breadcrumb">
 							<li><a href="#"> <marquee width="100%" behavior="scroll"
-										direction="left">
-									<img height="15px" width="15px" src="" alt="thong bao">
-										Thông báo khóa k2020 nộp bằng tốt nghiệp trước ngày 21-12-2022
-										| Sinh viên nghỉ tết dương lịch 2023 2 ngày 01-01-2022 và
-										02-01-2022 | Sinh viên sẽ kết thúc học kì 1 năm học 2022 trước
-										ngày 09-01-2022 </marquee>
+										direction="left"> <img height="15px" width="15px"
+										src="" alt="thong bao"> Thông báo khóa k2020 nộp bằng
+										tốt nghiệp trước ngày 21-12-2022 | Sinh viên nghỉ tết dương
+										lịch 2023 2 ngày 01-01-2022 và 02-01-2022 | Sinh viên sẽ kết
+										thúc học kì 1 năm học 2022 trước ngày 09-01-2022 </marquee>
 							</a></li>
 
 						</ol>
-
-						<!-- Detail Đề Tài -->
-						<div class="panel panel-default">
-							<c:if test="${not empty message}">
+						<c:if test="${not empty message}">
 							<!-- Hiển thị thông báo -->
-							<div class="panel-heading" style="background-color: #5F9EA0 !important;">
-								<h3>${message}</h3>
+							<div class="panel-heading"
+								style="background-color: #25d78a !important; border-radius: 12px !important;">
+								<h3 style="margin: 0 !important; font-size: 20px;">${message}</h3>
 							</div>
 						</c:if>
+						<!-- Detail Đề Tài -->
+						<div class="panel panel-default">
 							<div style="color: rgb(7, 132, 163);" class="panel-heading">
 								<h4 style="font-family: verdana; color: rgb(87, 87, 87);">Chi
 									tiết đề tài</h4>
@@ -139,7 +143,7 @@
 
 											<tr>
 												<td>SL sinh viên</td>
-												<td>${detail.soLuong}</td>
+												<td>${detail.checkSL(detail.id)}/${detail.soLuong}</td>
 											</tr>
 											<tr>
 												<td>Được phép đăng ký khác chuyên ngành</td>
@@ -180,19 +184,27 @@
 											</tr>
 											<tr class=" success">
 												<td>Điểm đề tài</td>
-												
-													<td>Chưa có điểm</td>
-												
+
+												<td>Chưa có điểm</td>
+
 											</tr>
 											<tr>
 
 												<td colspan="2" style="text-align: center;">
 
-													<button id="back" type="button" class="btn btn-info">Quay
-														về</button>
-													<button id="dangky" type="button" onclick="location.href='dkdtsv?dt=${detail.id}';" class="btn btn-info"
-														style="text-align: right !important;">Đăng ký đề
-														tài</button>
+													<button id="back" onclick="location.href='listDT';"
+														type="button" class="btn btn-info">Quay về</button> 
+														<c:if test="${detail.checkSL(detail.id) > 0}">
+														<button id="dangky" type="button"
+															onclick="location.href='dkdtsv?dt=${detail.id}';"
+															class="btn btn-info"
+															style="text-align: right !important;">Quan tâm đề tài</button>
+													</c:if> <c:if test="${detail.checkSL(detail.id) == 0}">
+														<button id="dangky" type="button"
+															onclick="location.href='dkdtsv?dt=${detail.id}';"
+															class="btn btn-info"
+															style="text-align: right !important;">Đăng kí đề tài</button>
+													</c:if>
 
 												</td>
 

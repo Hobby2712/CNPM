@@ -1,14 +1,19 @@
 package Entity;
 
+import DAO.DeTaiDAO;
+import DAOImpl.DeTaiDAOImpl;
+
 public class DeTai {
 	private int id;
 	private String tenDT;
 	private String mucTieu;
 	private String yeuCau;
 	private String sanPham;
+	private String chuThich;
 	private int soLuong;
 	private int loaiDT;
 	private int isKhacCN;
+	private int chuyenNganh;
 	private int trangThai;
 	private int nienKhoa;
 	private String GVHD;
@@ -19,19 +24,45 @@ public class DeTai {
 		super();
 	}
 
-	
 
-	public DeTai(int id, String tenDT, String mucTieu, String yeuCau, String sanPham, int soLuong, int loaiDT,
-			int isKhacCN, int trangThai, int nienKhoa, String gVHD, String gVPB, float diem) {
+
+	public String getChuThich() {
+		return chuThich;
+	}
+
+
+
+	public void setChuThich(String chuThich) {
+		this.chuThich = chuThich;
+	}
+
+
+	public int getChuyenNganh() {
+		return chuyenNganh;
+	}
+
+
+
+	public void setChuyenNganh(int chuyenNganh) {
+		this.chuyenNganh = chuyenNganh;
+	}
+
+
+
+	public DeTai(int id, String tenDT, String mucTieu, String yeuCau, String sanPham, String chuThich, int soLuong,
+			int loaiDT, int isKhacCN, int chuyenNganh, int trangThai, int nienKhoa, String gVHD, String gVPB,
+			float diem) {
 		super();
 		this.id = id;
 		this.tenDT = tenDT;
 		this.mucTieu = mucTieu;
 		this.yeuCau = yeuCau;
 		this.sanPham = sanPham;
+		this.chuThich = chuThich;
 		this.soLuong = soLuong;
 		this.loaiDT = loaiDT;
 		this.isKhacCN = isKhacCN;
+		this.chuyenNganh = chuyenNganh;
 		this.trangThai = trangThai;
 		this.nienKhoa = nienKhoa;
 		GVHD = gVHD;
@@ -154,9 +185,23 @@ public class DeTai {
 	@Override
 	public String toString() {
 		return "DeTai [id=" + id + ", tenDT=" + tenDT + ", mucTieu=" + mucTieu + ", yeuCau=" + yeuCau + ", sanPham="
-				+ sanPham + ", soLuong=" + soLuong + ", loaiDT=" + loaiDT + ", isKhacCN=" + isKhacCN + ", trangThai="
-				+ trangThai + ", nienKhoa=" + nienKhoa + ", GVHD=" + GVHD + ", GVPB=" + GVPB + ", Diem=" + Diem + "]";
+				+ sanPham + ", chuThich=" + chuThich + ", soLuong=" + soLuong + ", loaiDT=" + loaiDT + ", isKhacCN="
+				+ isKhacCN + ", chuyenNganh=" + chuyenNganh + ", trangThai=" + trangThai + ", nienKhoa=" + nienKhoa
+				+ ", GVHD=" + GVHD + ", GVPB=" + GVPB + ", Diem=" + Diem + "]";
 	}
+	
+	public int checkSL(int id) {
+		DeTaiDAO dao = new DeTaiDAOImpl();
+		return dao.soLuongSV(id);
+	}
+
+
+
+	
+
+
+
+	
 	
 	
 }

@@ -333,13 +333,16 @@ tr td:last-child {
 #nav-toggle:checked~.main-content {
     margin-left: 70px;
 }
+.formBig{
+    display: flex;
+}
 
 .form {
 
     box-sizing: border-box;
     margin-top: 20px;
     position: relative;
-    width: 100%;
+    width: 670px;
     height: 286px;
 
     background: #F8F5F5;
@@ -350,10 +353,13 @@ tr td:last-child {
 .form-2 {
 
     box-sizing: border-box;
-    margin-top: 20px;
+    margin-left: 20px;
+    margin-top: 8px;
     position: relative;
-    width: 100%;
-    height: 206px;
+    width: 400px;
+    height: 286px;
+    left: 0px;
+    top: 13px;
 
     background: #F8F5F5;
     border: 1px solid #000000;
@@ -362,18 +368,17 @@ tr td:last-child {
 
 .action-role {
     position: absolute;
-
     width: 635px;
     height: 260px;
-    left: 13px;
+    left: 0px;
     top: 13px;
 }
 
 .action-role h2 {
 
     position: absolute;
-
-    width: 100%;
+    margin-left: -100px;
+    width: 200px;
     height: 48px;
     left: calc(100%/2 + 40px);
 
@@ -428,9 +433,42 @@ tr td:last-child {
     box-sizing: border-box;
 
     position: absolute;
-    width: 635px;
+    width: 200px;
     height: 33px;
     left: 13px;
+    top: 119px;
+
+    background: #D9D9D9;
+    border: 1px solid rgba(0, 0, 0, 0.32);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+
+.form-account2 h3 {
+    position: absolute;
+    width: 150px;
+    height: 24px;
+    left: 300px;
+    top: 83px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+
+    color: #000000d2;
+}
+.form-account2 .input-box input {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 350px;
+    height: 33px;
+    left: 300px;
     top: 119px;
 
     background: #D9D9D9;

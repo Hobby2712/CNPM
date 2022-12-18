@@ -85,4 +85,52 @@ public class TaiKhoanDAOImpl extends ConnectDB implements TaiKhoanDAO{
         	e.printStackTrace();
         }
 	}
+	
+	@Override
+	public void changePass(String pass, String username) {
+		String query = "update taiKhoan\r\n"
+				+ "set uPass = ?\r\n"
+				+ "where userName = ?";
+        try {
+        	Connection conn = super.getConnection();
+			PreparedStatement ps = conn.prepareStatement(query);
+			ps.setString(1, pass);
+			ps.setString(2, username);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        	e.printStackTrace();
+        }	
+	}
+	
+	@Override
+	public int soTK() {
+		String query = "select count(*)-1 from taiKhoan";
+		try {
+			Connection conn = super.getConnection();
+			PreparedStatement ps = conn.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (Exception e) {
+		}
+		return 0;
+	}
+	
+	@Override
+	public void insertAccount(TaiKhoan tk) {
+		String query = "Insert into taiKhoan values (?,?,?,?)";
+		try {
+			Connection conn = super.getConnection();
+			PreparedStatement ps = conn.prepareStatement(query);
+			
+			ps.setString(1,tk.getUserName());
+			ps.setString(2, tk.getPass());
+			ps.setString(3, tk.getUid());
+			ps.setInt(4, tk.getRole());
+			ps.executeUpdate();
+		} catch (Exception e) {
+		}
+		
+	}
 }

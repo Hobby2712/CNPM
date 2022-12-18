@@ -48,9 +48,9 @@ public class LoginController extends HttpServlet {
 				response.addCookie(uNameCookie);
 				response.addCookie(passCookie);
 			}
-			if(u.getRole() == 2)
+			if(u.getRole() == 2 || u.getRole() == 4)
 			{
-				response.sendRedirect("dkdt");
+				response.sendRedirect("homeGV");
 			}
 			else if (u.getRole() == 1)
 			{

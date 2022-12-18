@@ -39,8 +39,10 @@ public class DangKiDTController extends HttpServlet {
 		dt.setIsKhacCN(Integer.parseInt(req.getParameter("isKhacCN")));
 		dt.setSanPham(req.getParameter("sanPham"));
 		dt.setLoaiDT(Integer.parseInt(req.getParameter("loaiDT")));
+		dt.setChuyenNganh(Integer.parseInt(req.getParameter("chuyenNganh")));
 		dt.setMucTieu(req.getParameter("mucTieu"));
 		dt.setYeuCau(req.getParameter("yeuCau"));
+		dt.setChuThich(req.getParameter("chuThich"));
 		dt.setGVHD(u.getUid());
 
 		if (dao.checkDotDKGV() == true) {
@@ -68,8 +70,10 @@ public class DangKiDTController extends HttpServlet {
 		dt.setIsKhacCN(Integer.parseInt(req.getParameter("isKhacCN")));
 		dt.setSanPham(req.getParameter("sanPham"));
 		dt.setLoaiDT(Integer.parseInt(req.getParameter("loaiDT")));
+		dt.setChuyenNganh(Integer.parseInt(req.getParameter("chuyenNganh")));
 		dt.setMucTieu(req.getParameter("mucTieu"));
 		dt.setYeuCau(req.getParameter("yeuCau"));
+		dt.setChuThich(req.getParameter("chuThich"));
 		dt.setGVHD(u.getUid());
 
 		if (dao.checkDotDKGV() == true) {
@@ -80,6 +84,5 @@ public class DangKiDTController extends HttpServlet {
 		}
 		RequestDispatcher dispatcher = req.getRequestDispatcher("dkdt");
 		dispatcher.forward(req, resp);
-
 	}
 }

@@ -38,13 +38,11 @@
 	<div id="menu">
 		<li class="list-group-item"
 			style="text-align: center; font-weight: bold; font-family: verdana; background-color: #efefef; color: cadetblue;">
-			DANH MỤC</li> <a href="CNPM.html" class="list-group-item">Trang Chủ</a> <a
-			href="quantritaikhoan.html" class="list-group-item ">Quản trị tài
-			khoản</a> <a href="list_de_tai.html" class="list-group-item ">Danh
-			sách đề tài</a> <a href="list_giang_vien.html" class="list-group-item ">Thông
-			tin giảng viên</a> <a href="list_sinh_vien.html" class="list-group-item ">Thông
-			tin sinh viên</a> <a data-toggle="modal" href="#seach_box"
-			class="list-group-item"> Tìm kiếm</a>
+			DANH MỤC</li> <a href="home" class="list-group-item ">Trang Chủ</a> <a
+			href="info" class="list-group-item active">Quản trị tài khoản</a> <a
+			href="listDT" class="list-group-item ">Đăng kí đề tài</a><a
+			href="loadTV" class="list-group-item ">Quản lý nhóm</a> <a
+			href="nopBC" class="list-group-item ">Nộp báo cáo</a>
 		<hr />
 	</div>
 
@@ -63,9 +61,16 @@
 			<div id="banner-desktop">
 				<div class="container">
 					<div id="banner">
-						<div id="login-area">
-							<a data-toggle="modal" href="Login.html"> Đăng nhập</a>
-						</div>
+						<c:if test="${sessionScope.acc == null}">
+							<div id="login-area">
+								<a data-toggle="modal" href="loginAccount"> Đăng nhập</a>
+							</div>
+						</c:if>
+						<c:if test="${sessionScope.acc != null}">
+							<div id="login-area">
+								<a data-toggle="modal" href="logout"> Đăng xuất</a>
+							</div>
+						</c:if>
 					</div>
 				</div>
 			</div>
@@ -84,15 +89,11 @@
 									</div>
 
 
-									<a href="CNPM.html" class="list-group-item active">Trang
-										Chủ</a> <a href="quantritaikhoan.html"
-										class="list-group-item active "> Quản trị tài khoản</a> <a
-										href="list_de_tai.html" class="list-group-item active ">
-										Danh sách đề tài</a> <a href="list_giang_vien.html"
-										class="list-group-item active ">Thông tin giảng viên</a> <a
-										href="list_sinh_vien.html" class="list-group-item active ">
-										Thông tin sinh viên</a> <a data-toggle="modal" href="#"
-										class="list-group-item active"> Tìm kiếm</a>
+									<a href="home" class="list-group-item ">Trang Chủ</a> <a
+										href="info" class="list-group-item active">Quản trị tài
+										khoản</a> <a href="listDT" class="list-group-item ">Đăng kí đề
+										tài</a><a href="loadTV" class="list-group-item ">Quản lý nhóm</a>
+									<a href="nopBC" class="list-group-item ">Nộp báo cáo</a>
 								</div>
 							</div>
 						</div>

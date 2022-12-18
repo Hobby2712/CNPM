@@ -18,4 +18,31 @@ public interface DeTaiDAO {
 
 	boolean checkDotDKSV();
 
+	int getIDdeTai(String user);
+
+	void insertTV(int detai, String uid);
+
+	void deleteTV(int detai, String uid);
+
+	void tuChoiDeTai(int detai);
+
+	void duyetDeTai(int detai);
+
+	List<DeTai> getDuyetDeTai();
+
+	DeTai getDeTaiByID(int detai);
+
+	int soLuongSV(int detai);
+
+	List<DeTai> getDeTaiHD(String maGV);
+
+	void insertSVQT(int detai, String uid);
+
+	void deleteSVQT(int detai, String uid);
+
+	List<DeTai> getDeTai();
+
+	int soDT();
+
+
 }

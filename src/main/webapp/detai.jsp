@@ -22,16 +22,11 @@
 		</div>
 		<div class="sidebar-menu">
 			<ul>
-				<li><a href="admin.jsp"><span class="las la-igloo"></span><span>Trang
-							chủ</span></a></li>
-				<li><a href="student.html"><span class="las la-users"></span><span>Sinh
-							viên</span></a></li>
-				<li><a href="teacher.html"><span class="las la-users"></span><span>Giảng
-							viên</span></a></li>
-				<li><a href="detai.jsp" class="active"><span
-						class="las la-list"></span><span>Tạo đợt đăng kí đề tài</span></a></li>
-				<li><a href="Account.html"><span class="las la-user-circle"></span><span>Tài
-							Khoản</span></a></li>
+				<li><a href="admin"><span class="las la-igloo"></span><span>Trang chủ</span></a></li>
+                <li><a href="detai.jsp" class="active"><span class="las la-list"></span><span>Tạo đợt đăng ký đề tài</span></a></li>
+                <li><a href="listTK"><span class="las la-user-circle"></span><span>Tài khoản</span></a></li>
+                <li><a href="listHD"><span class="las la-campground"></span><span>Tạo hội đồng</span></a></li>
+                <li><a href="logout"><span class="las la-arrow-alt-circle-left"></span><span>Đăng xuất</span></a></li>
 			</ul>
 		</div>
 	</div>
@@ -56,23 +51,6 @@
 			</div>
 		</header>
 		<main>
-			<div class="cards">
-
-				<div class="card-single">
-					<div>
-						<h1>79</h1>
-						<span>De tai</span>
-					</div>
-					<div>
-						<span class="las la-clipboard"></span>
-					</div>
-				</div>
-
-
-
-
-			</div>
-
 			<div class="recent2-grid">
 				<div class="projects">
 					<c:if test="${not empty message}">

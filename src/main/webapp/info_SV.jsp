@@ -7,45 +7,41 @@
 
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="icon" href="#" type="" />
-<link rel="shortcut icon" href="#" />
-<title>::. Th&#244;ng b&#225;o .::</title>
-<link rel="stylesheet" media="all" type="text/css"
-	href="css/bootstrap.min.css" />
-<link rel="stylesheet" media="all" type="text/css" href="css/style.css" />
-<link rel="stylesheet" media="all" type="text/css"
-	href="css/footable.core.css" />
-<link rel="stylesheet" media="all" type="text/css"
-	href="css/footable.standalone.css" />
-<link href="css/font-awesome.min.css" rel="stylesheet" />
-<link href="css/font-awesome.css" rel="stylesheet" />
-<link rel="stylesheet" href="fontawesome/css/all.min.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" href="#" type="" />
+	<link rel="shortcut icon" href="#" />
+	<title>::. Th&#244;ng b&#225;o .::</title>
+	<link rel="stylesheet" media="all" type="text/css"
+		href="css/bootstrap.min.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" media="all" type="text/css"
+		href="css/footable.core.css" />
+	<link rel="stylesheet" media="all" type="text/css"
+		href="css/footable.standalone.css" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" />
+	<link href="css/font-awesome.css" rel="stylesheet" />
+	<link rel="stylesheet" href="fontawesome/css/all.min.css">
 
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="js/footable.js"></script>
-<script type="text/javascript" src="js/myjs.js"></script>
-<script src="js/ckeditor.js"></script>
-<link href="css/jquery.simple-dtpicker.css" rel="stylesheet" />
-<script src="js/jquery.simple-dtpicker.js"></script>
-
-
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/footable.js"></script>
+		<script type="text/javascript" src="js/myjs.js"></script>
+		<script src="js/ckeditor.js"></script>
+		<link href="css/jquery.simple-dtpicker.css" rel="stylesheet" />
+		<script src="js/jquery.simple-dtpicker.js"></script>
 </head>
 
 <body>
 	<div id="menu">
 		<li class="list-group-item"
 			style="text-align: center; font-weight: bold; font-family: verdana; background-color: #efefef; color: cadetblue;">
-			DANH MỤC</li> <a href="CNPM.html" class="list-group-item">Trang Chủ</a> <a
-			href="quantritaikhoan.html" class="list-group-item ">Quản trị tài
-			khoản</a> <a href="list_de_tai.html" class="list-group-item ">Danh
-			sách đề tài</a> <a href="list_giang_vien.html" class="list-group-item ">Thông
-			tin giảng viên</a> <a href="list_sinh_vien.html" class="list-group-item ">Thông
-			tin sinh viên</a> <a data-toggle="modal" href="#seach_box"
-			class="list-group-item"> Tìm kiếm</a>
+			DANH MỤC</li> <a href="home" class="list-group-item ">Trang Chủ</a> <a
+			href="info" class="list-group-item active">Quản trị tài khoản</a> <a
+			href="listDT" class="list-group-item ">Đăng kí đề tài</a><a
+			href="loadTV" class="list-group-item ">Quản lý nhóm</a> <a
+			href="nopBC" class="list-group-item ">Nộp báo cáo</a>
 		<hr />
 	</div>
 
@@ -64,9 +60,16 @@
 			<div id="banner-desktop">
 				<div class="container">
 					<div id="banner">
-						<div id="login-area">
-							<a data-toggle="modal" href="Login.html"> Đăng nhập</a>
-						</div>
+						<c:if test="${sessionScope.acc == null}">
+							<div id="login-area">
+								<a data-toggle="modal" href="loginAccount"> Đăng nhập</a>
+							</div>
+						</c:if>
+						<c:if test="${sessionScope.acc != null}">
+							<div id="login-area">
+								<a data-toggle="modal" href="logout"> Đăng xuất</a>
+							</div>
+						</c:if>
 					</div>
 				</div>
 			</div>
@@ -84,15 +87,11 @@
 										<h4 id="mobile_home">Danh Mục</h4>
 									</div>
 
-									<a href="CNPM.html" class="list-group-item active">Trang
-										Chủ</a> <a href="quantritaikhoan.html"
-										class="list-group-item active "> Quản trị tài khoản</a> <a
-										href="list_de_tai.html" class="list-group-item active ">
-										Danh sách đề tài</a> <a href="list_giang_vien.html"
-										class="list-group-item active ">Thông tin giảng viên</a> <a
-										href="list_sinh_vien.html" class="list-group-item active ">
-										Thông tin sinh viên</a> <a data-toggle="modal" href="#"
-										class="list-group-item active"> Tìm kiếm</a>
+									<a href="home" class="list-group-item ">Trang Chủ</a> <a
+										href="info" class="list-group-item active">Quản trị tài
+										khoản</a> <a href="listDT" class="list-group-item ">Đăng kí đề
+										tài</a><a href="loadTV" class="list-group-item ">Quản lý nhóm</a>
+									<a href="nopBC" class="list-group-item ">Nộp báo cáo</a>
 								</div>
 							</div>
 						</div>
@@ -101,12 +100,12 @@
 					<div class="col-md-9">
 						<ol class="breadcrumb">
 							<li><a href="#"> <marquee width="100%" behavior="scroll"
-										direction="left">
-									<img height="15px" width="15px" src="img/thongbao.png"
-										alt="thong bao"> Thông báo khóa k2020 nộp bằng tốt
-									nghiệp trước ngày 21-12-2022 | Sinh viên nghỉ tết dương lịch
-									2023 2 ngày 01-01-2022 và 02-01-2022 | Sinh viên sẽ kết thúc
-									học kì 1 năm học 2022 trước ngày 09-01-2022 </marquee>
+										direction="left"> <img height="15px" width="15px"
+										src="img/thongbao.png" alt="thong bao"> Thông báo khóa
+										k2020 nộp bằng tốt nghiệp trước ngày 21-12-2022 | Sinh viên
+										nghỉ tết dương lịch 2023 2 ngày 01-01-2022 và 02-01-2022 |
+										Sinh viên sẽ kết thúc học kì 1 năm học 2022 trước ngày
+										09-01-2022 </marquee>
 							</a></li>
 
 						</ol>
@@ -133,7 +132,7 @@
 												<td>${info.uId}</td>
 											</tr>
 
-											<tr >
+											<tr>
 												<td>Địa Chỉ</td>
 												<td>${info.address}</td>
 											</tr>
@@ -143,7 +142,7 @@
 												<td>${info.gioiTinh}</td>
 											</tr>
 
-											<tr >
+											<tr>
 												<td>Số điện thoại</td>
 												<td>${info.phone}</td>
 											</tr>
@@ -154,7 +153,7 @@
 											</tr>
 
 
-											<tr >
+											<tr>
 												<td>Chuyên ngành</td>
 												<c:if test="${info.chuyenNganh==1}">
 													<td>Công nghệ phần mềm</td>
@@ -175,11 +174,13 @@
 								</div>
 								<div class="col-left">
 									<img src="img/Avatar.png" alt="avatar">
-									<div>
-										<a href="loadEditInfo"><button
-												class="back btn btn-success">Sửa thông tin</button></a>
-									</div>
-
+										<div>
+											<a href="loadEditInfo"><button
+													class="back btn btn-success">Sửa thông tin</button></a><br>
+												<a href="loadchangePass"><button
+														class="edit-information btn btn-warning">Đổi mật
+														khẩu</button></a>
+										</div>
 								</div>
 							</div>
 						</div>

@@ -24,16 +24,11 @@
 		</div>
 		<div class="sidebar-menu">
 			<ul>
-				<li><a href="admin.html"><span class="las la-igloo"></span><span>Trang
-							chủ</span></a></li>
-				<li><a href="student.html"><span class="las la-users"></span><span>Sinh
-							vien</span></a></li>
-				<li><a href="teacher.html"><span class="las la-users"></span><span>Giang
-							vien</span></a></li>
-				<li><a href="topic.html"><span class="las la-list"></span><span>De
-							tai</span></a></li>
-				<li><a href="Account.html" class="active"><span
-						class="las la-user-circle"></span><span>Tai khoan</span></a></li>
+				<li><a href="admin"><span class="las la-igloo"></span><span>Trang chủ</span></a></li>
+                <li><a href="detai.jsp"><span class="las la-list"></span><span>Tạo đợt đăng ký đề tài</span></a></li>
+                <li><a href="listTK" class="active"><span class="las la-user-circle"></span><span>Tài khoản</span></a></li>
+                <li><a href="listHD"><span class="las la-campground"></span><span>Tạo hội đồng</span></a></li>
+                <li><a href="logout"><span class="las la-arrow-alt-circle-left"></span><span>Đăng xuất</span></a></li>
 			</ul>
 		</div>
 	</div>
@@ -58,23 +53,6 @@
 			</div>
 		</header>
 		<main>
-			<div class="cards">
-
-				<div class="card-single">
-					<div>
-						<h1>79</h1>
-						<span>Tài khoản</span>
-					</div>
-					<div>
-						<span class="las la-user-circle"></span>
-					</div>
-				</div>
-
-
-
-
-			</div>
-
 			<div class="recent2-grid">
 				<div class="projects">
 					<c:if test="${not empty message}">
@@ -86,9 +64,9 @@
 					<div class="card">
 						<div class="card-header">
 							<h3>Quản lý tài khoản</h3>
-							<button>
-								Xem tat ca <span class="las la-arrow-right"></span>
-							</button>
+							<a href="listTKadd"><button>
+								Thêm tài khoản <span class="las la-arrow-right"></span>
+							</button></a>
 						</div>
 					</div>
 
@@ -114,6 +92,9 @@
 											<c:if test="${o.role == 3}">
 												<td>Sinh Viên</td>
 											</c:if>
+											<c:if test="${o.role == 4}">
+												<td>Trưởng bộ môn</td>
+											</c:if>
 										</tr>
 									</c:forEach>
 
@@ -125,58 +106,63 @@
 
 
 			</div>
-			<form action="updateRole" method="post">
-				<div class="form">
-					<div class="action-role">
-						<h2>
-							<span>Phân quyền tài khoản</span>
-						</h2>
-					</div>
-					<div class="form-account">
-						<div class="input-box">
-							<h3>
-								<span>Tên tài khoản</span>
-							</h3>
-							<input type="text" name="tk" placeholder="" required>
+			<div class="formBig">
+				<form action="updateRole" method="post">
+					<div class="form">
+						<div class="action-role">
+							<h2 style="width: 400px; margin-left: -160px;">
+								<span>Phân quyền tài khoản</span>
+							</h2>
 						</div>
-					</div>
-					<div class="form-role">
-						<div class="input-box">
-							<h3>
-								<span>Phân quyền</span>
-							</h3>
-							<select name="role">
-								<option value="2">Giảng viên</option>
-								<option value="3">Sinh viên</option>
-							</select>
+						<div class="form-account">
+							<div class="input-box">
+								<h3>
+									<span>Tên tài khoản</span>
+								</h3>
+								<input type="text" name="tk" placeholder="" required
+									style="width: 635px;">
+							</div>
 						</div>
+						<div class="form-role">
+							<div class="input-box">
+								<h3>
+									<span>Phân quyền</span>
+								</h3>
+								<select name="role">
+									<option value="2">Giảng viên</option>
+									<option value="3">Sinh viên</option>
+									<option value="4">Trưởng bộ môn</option>
+								</select>
+							</div>
+						</div>
+						<button class="submit" type="submit">
+							<span>Xác nhận</span>
+						</button>
 					</div>
-					<button class="submit" type="submit">
-						<span>Xac nhan</span>
-					</button>
-				</div>
-			</form>
+				</form>
 
-			<form action="delAcc" method="post">
-				<div class="form-2">
-					<div class="action-role">
-						<h2>
-							<span>Xóa tài khoản</span>
-						</h2>
-					</div>
-					<div class="form-account">
-						<div class="input-box">
-							<h3>
-								<span>Tên tài khoản</span>
-							</h3>
-							<input type="text" name="tk" placeholder="" required>
+				<form action="delAcc" method="post">
+					<div class="form-2">
+						<div class="action-role">
+							<h2 style="margin-left: -250px">
+								<span>Xóa tài khoản</span>
+							</h2>
 						</div>
+						<div class="form-account">
+							<div class="input-box">
+								<h3 style="margin-left: 90px; margin-top: 20px;">
+									<span>Tên tài khoản</span>
+								</h3>
+								<input type="text" name="tk" placeholder="" required
+									style="margin-left: 90px; margin-top: 20px;">
+							</div>
+						</div>
+						<button class="submit" type="submit" style="top: 82%">
+							<span>Xac nhan</span>
+						</button>
 					</div>
-					<button class="submit" type="submit" style="top: 82%">
-						<span>Xac nhan</span>
-					</button>
-				</div>
-			</form>
+				</form>
+			</div>
 	</div>
 
 
